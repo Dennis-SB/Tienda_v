@@ -1,22 +1,94 @@
 <!DOCTYPE html>
-<html>
+<!-- Se actualiza la página index para que contenga nuevas etiquetas meta
+  y demás etiquetas para la semántica del boddy -->
+<html lang="es">
     <head>
         <title>Tienda en Línea</title>
         <meta charset="UTF-8">
+        <meta name="description" content="Esta página contine etiquetas del tipo HTML5 y luego enlaces o definición de estilo CSS3">
+        <meta name="keywords" content="html5, css3, web, fidelitas">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <a href="ejemplo9.html">Back</a>|
-        <a href="index.html">Home</a>|
-        <a href="ejemplo2.html">Next</a><br>
-        <div>
-            <h1 style="text-align: center">Home</h1>
-            <p>Bienvenidos a la Página de la Tienda en Línea</p>
-        </div>
-        <p style="text-align: left">Lorem ipsum dolor sit amet consectetur adipiscing elit id, tempor turpis neque sodales duis proin nam. Vulputate tempus odio conubia justo vehicula laoreet est, non massa ornare natoque fames a donec, fermentum aliquam posuere nisl dictum in. Magna egestas nisi aptent netus ante in per mauris placerat, vivamus lectus augue bibendum est sem tellus. Sollicitudin facilisi habitant magna duis volutpat platea mollis proin, id vulputate magnis rutrum sodales hendrerit faucibus ultrices porttitor, tortor nunc praesent diam hac accumsan gravida.</p>
-        <p style="text-align: right">Habitasse aliquam neque vehicula quisque ante venenatis per nibh congue conubia nunc diam, dictum turpis sociosqu vestibulum scelerisque velit placerat odio integer metus sollicitudin. Eros platea feugiat blandit interdum nascetur consequat risus nibh pretium neque accumsan, viverra gravida netus taciti condimentum eleifend at sollicitudin enim lectus metus, elementum nisi felis porta facilisi dignissim ligula vehicula quis a. Mattis odio interdum aptent sed et montes praesent, aenean nostra cursus porta augue inceptos vel, rhoncus mus velit arcu porttitor lacus. Facilisis sodales dis risus massa aliquet sed tellus vel suscipit, sem velit semper tristique ornare ridiculus per lobortis, mattis class luctus penatibus platea faucibus nunc vestibulum.</p>
-        <p style="text-align: center">Suscipit commodo sociosqu vel senectus duis aenean, proin taciti auctor pharetra arcu sollicitudin, sem nam venenatis tempus diam. Orci mollis vel convallis dignissim placerat lacinia, torquent viverra semper enim inceptos, ante dis diam elementum sociosqu. Suscipit tempus ut fusce lacinia pellentesque habitasse orci hac, praesent aliquet nascetur inceptos eget natoque volutpat felis, suspendisse sollicitudin conubia nunc rhoncus dictumst taciti. Ligula mattis varius nunc ridiculus porttitor litora molestie interdum sodales ultrices sed nibh habitasse, in justo sapien phasellus at hac magna magnis malesuada cursus convallis.</p>
-        <br>
-        <br>
-        <p>Última Línea</p>
+        <header id="encabezado"> <!-- Etiqueta para ofrecerle al browser info del encabezado -->
+            <h1>TechShop</h1>
+        </header>
+        <nav id="menu"> <!-- Esta etiqueta es para ilustrarle al browser que es un menú -->
+            <a href="ejemplo9.html">Back</a>|
+            <a href="index.html">Home</a>|
+            <a href="ejemplo2.html">Next</a><br>
+        </nav>
+        <aside id="barralateral"> <!-- Etiqueta para indicar que es una barra lateral -->
+            <h2>Productos más Vendidos</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit mi rutrum penatibus, ultrices odio leo venenatis diam a scelerisque aliquam accumsan augue cursus, enim auctor id nibh magnis magna morbi et at. Nostra mattis diam pretium urna euismod magnis morbi nunc, cubilia risus justo natoque parturient habitant feugiat, ultricies fringilla nam arcu malesuada vulputate massa. Suscipit torquent ad quam nunc potenti facilisi pretium primis, phasellus dictum cras luctus iaculis congue ornare fringilla, porta nascetur pulvinar quis a gravida duis.</p>
+        </aside> 
+        <section id="contenido">
+            <h2>Artículos Principales</h2>
+            <article>
+                <header>Macbook Pro 14</header>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit id, tempor turpis neque sodales duis proin nam. Vulputate tempus odio conubia justo vehicula laoreet est, non massa ornare natoque fames a donec, fermentum aliquam posuere nisl dictum in. Magna egestas nisi aptent netus ante in per mauris placerat, vivamus lectus augue bibendum est sem tellus. Sollicitudin facilisi habitant magna duis volutpat platea mollis proin, id vulputate magnis rutrum sodales hendrerit faucibus ultrices porttitor, tortor nunc praesent diam hac accumsan gravida.</p>
+                <footer>Agregar al Carrtio</footer>
+                <figure>
+                    <img src="images/pc1.jpg" alt="Macbook Pro 14"/>
+                </figure>
+            </article>
+            <article>
+                <header>Alienware M15 R6</header>
+                <p>Está inspirada en la película <cite>Aliens el Octavo Pasajero</cite>Habitasse aliquam neque vehicula quisque ante venenatis per nibh congue conubia nunc diam, dictum turpis sociosqu vestibulum scelerisque velit placerat odio integer metus sollicitudin. Eros platea feugiat blandit interdum nascetur consequat risus nibh pretium neque accumsan, viverra gravida netus taciti condimentum eleifend at sollicitudin enim lectus metus, elementum nisi felis porta facilisi dignissim ligula vehicula quis a. Mattis odio interdum aptent sed et montes praesent, aenean nostra cursus porta augue inceptos vel, rhoncus mus velit arcu porttitor lacus. Facilisis sodales dis risus massa aliquet sed tellus vel suscipit, sem velit semper tristique ornare ridiculus per lobortis, mattis class luctus penatibus platea faucibus nunc vestibulum.</p>
+                <footer>Agregar al Carrtio</footer>
+                <figure>
+                    <img src="images/pc2.png" alt="Alienware M15 R6"/>
+                    <figcaption>Mäs Vendido</figcaption>
+                </figure>
+            </article>
+            <article>
+                <header>Asus Rog Strix G15</header>
+                <p>Suscipit commodo sociosqu vel senectus duis aenean, proin taciti auctor pharetra arcu sollicitudin, sem nam venenatis tempus diam. Orci mollis vel convallis dignissim placerat lacinia, torquent viverra semper enim inceptos, ante dis diam elementum sociosqu. Suscipit tempus ut fusce lacinia pellentesque habitasse orci hac, praesent aliquet nascetur inceptos eget natoque volutpat felis, suspendisse sollicitudin conubia nunc rhoncus dictumst taciti. Ligula mattis varius nunc ridiculus porttitor litora molestie interdum sodales ultrices sed nibh habitasse, in justo sapien phasellus at hac magna magnis malesuada cursus convallis.</p>
+                <footer>Agregar al Carrito</footer>
+                <figure>
+                    <img src="images/pc3.jpg" alt="Asus Rog Strix G15"/>
+                    <figcaption>Mäs Económico</figcaption>
+                </figure>
+            </article>
+            <article>
+                <header>Resumen de Líneas Generales</header>
+                <table border="0">
+                    <thead>
+                        <tr id="encabezadoTabla">
+                            <th>Código</th>
+                            <th>Detalle</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaResumen">
+                        <tr>
+                            <td>1</td>
+                            <td>Suscipit commodo sociosqu vel senectus duis aenean</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Proin taciti auctor pharetra arcu sollicitudin</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Sem nam venenatis tempus diam</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Orci mollis vel convallis dignissim placerat lacinia</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Torquent viverra semper enim inceptos</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Ante dis diam elementum sociosqu</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </article>
+        </section>
+        <footer id="piepagina">Derechos Reservados &COPY; 2022<address style="display: inline"> Tel 8889-7744</address></footer>
     </body>
 </html>
