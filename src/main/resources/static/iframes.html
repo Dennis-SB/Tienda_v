@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- Se actualiza la página index para que contenga nuevas etiquetas meta
+  y demás etiquetas para la semántica del boddy -->
+<html lang="es">
+    <head>
+        <title>Tienda en Línea</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Esta página contine etiquetas del tipo HTML5 y luego enlaces o definición de estilo CSS3">
+        <meta name="keywords" content="html5, css3, web, fidelitas">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header id="encabezado"> <!-- Etiqueta para ofrecerle al browser info del encabezado -->
+            <h1>TechShop</h1>
+        </header>
+        <nav id="menu"> <!-- Esta etiqueta es para ilustrarle al browser que es un menú -->
+            <a href="ejemplo9.html">Back</a>|
+            <a href="index.html">Home</a>|
+            <a href="ejemplo2.html">Next</a><br>
+        </nav>
+        <aside id="barralateral"> <!-- Etiqueta para indicar que es una barra lateral -->
+            <h2>Productos más Vendidos</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit mi rutrum penatibus, ultrices odio leo venenatis diam a scelerisque aliquam accumsan augue cursus, enim auctor id nibh magnis magna morbi et at. Nostra mattis diam pretium urna euismod magnis morbi nunc, cubilia risus justo natoque parturient habitant feugiat, ultricies fringilla nam arcu malesuada vulputate massa. Suscipit torquent ad quam nunc potenti facilisi pretium primis, phasellus dictum cras luctus iaculis congue ornare fringilla, porta nascetur pulvinar quis a gravida duis.</p>
+        </aside> 
+        <section id="contenido">
+            <h2>Ejemplo de iFrame</h2>
+            <article>
+                <header><h3>La página de la Universidad</h3></header>
+                <iframe src="https://sistemas.ufidelitas.ac.cr/" width="700" height="400">
+                </iframe>
+                <footer>Escuela de Sistemas</footer>
+            </article>
+            <article>
+                <header><h3>Video de YouTube</h3></header>
+                <iframe width="500" height="280" src="https://www.youtube.com/embed/kN1XP-Bef7w" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+                <footer>Mostrando HTML5</footer>
+            </article>
+            <article>
+                <header><h3>STEM Center</h3></header>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.9805280581977!2d-84.03794158413888!3d9.935577876863757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e3aa66fa362b%3A0xf134cee2340078e2!2sStem%20Center%20Fid%C3%A9litas!5e0!3m2!1sen!2scr!4v1654040641304!5m2!1sen!2scr"
+                        width="600" height="450" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <footer>Ubicación del STEM Center en Google Maps</footer>
+            </article>
+        </section>
+        <footer id="piepagina">Derechos Reservados &COPY; 2022<address style="display: inline"> Tel 8889-7744</address></footer>
+    </body>
+</html>

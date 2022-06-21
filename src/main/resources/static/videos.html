@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- Se actualiza la página index para que contenga nuevas etiquetas meta
+  y demás etiquetas para la semántica del boddy -->
+<html lang="es">
+    <head>
+        <title>Tienda en Línea</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Esta página contine etiquetas del tipo HTML5 y luego enlaces o definición de estilo CSS3">
+        <meta name="keywords" content="html5, css3, web, fidelitas">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header id="encabezado"> <!-- Etiqueta para ofrecerle al browser info del encabezado -->
+            <h1>TechShop</h1>
+        </header>
+        <nav id="menu"> <!-- Esta etiqueta es para ilustrarle al browser que es un menú -->
+            <a href="ejemplo9.html">Back</a>|
+            <a href="index.html">Home</a>|
+            <a href="ejemplo2.html">Next</a><br>
+        </nav>
+        <aside id="barralateral"> <!-- Etiqueta para indicar que es una barra lateral -->
+            <h2>Productos más Vendidos</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit mi rutrum penatibus, ultrices odio leo venenatis diam a scelerisque aliquam accumsan augue cursus, enim auctor id nibh magnis magna morbi et at. Nostra mattis diam pretium urna euismod magnis morbi nunc, cubilia risus justo natoque parturient habitant feugiat, ultricies fringilla nam arcu malesuada vulputate massa. Suscipit torquent ad quam nunc potenti facilisi pretium primis, phasellus dictum cras luctus iaculis congue ornare fringilla, porta nascetur pulvinar quis a gravida duis.</p>
+        </aside> 
+        <section id="contenido">
+            <h2>Ejemplo de Videos</h2>
+            <article>
+                <header><h3>Torpedo</h3></header>
+                <figure>
+                    <video width="320" height="240" controls autoplay muted>
+                        <source src="videos/torpedo.mp4" type="video/mp4">
+                        Su explorador no soporta el formato de video <code>video</code> tag.
+                    </video>
+                    <figcaption>Realizada en 2021</figcaption>
+                </figure>
+            </article>
+        </section>
+        <footer id="piepagina">Derechos Reservados &COPY; 2022<address style="display: inline"> Tel 8889-7744</address></footer>
+    </body>
+</html>
