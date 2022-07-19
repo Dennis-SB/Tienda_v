@@ -2,6 +2,7 @@ package com.tienda.controller;
 
 import com.tienda.domain.Articulo;
 import com.tienda.service.ArticuloService;
+import com.tienda.service.CategoriaService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ArticuloController {
     @Autowired
     private ArticuloService articuloservice;
+    @Autowired
+    private CategoriaService categoriaservice;
+    
     @GetMapping("/articulo/listado")
     public String inicio(Model model) {
         var articulos = articuloservice.getArticulos(false);
@@ -22,7 +26,9 @@ public class ArticuloController {
     }
     
     @GetMapping("/articulo/nuevo")
-    public String nuevoArticulo(Articulo articulo) {
+    public String nuevoArticulo(Articulo articulo, Model model) {
+        var categorias = categoriaservice.getCategorias(true);
+        model.addAttribute("categorias",categorias);
         return "/articulo/modificar";
     }
     
@@ -34,6 +40,8 @@ public class ArticuloController {
     
     @GetMapping("/articulo/modificar/{idArticulo}")
     public String modificarArticulo(Articulo articulo, Model model) {
+        var categorias = categoriaservice.getCategorias(true);
+        model.addAttribute("categorias",categorias);
         articulo = articuloservice.getArticulo(articulo);
         model.addAttribute("articulo", articulo);
         return "/articulo/modificar";

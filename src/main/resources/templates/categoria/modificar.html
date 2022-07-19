@@ -9,20 +9,20 @@
     <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <header th:replace="layout/plantilla :: header"/>
-        <h2>Datos de la Categoría</h2>
-        <a th:href="@{/categoria/listado}">Regresar</a>
+        <h2 th:text="#{categoria.datos}">Datos de la Categoría</h2>
+        <a th:href="@{/categoria/listado}"  th:text="#{accion.regresar}">Regresar</a>
         <form th:action="@{/categoria/guardar}" method="post" th:object="${categoria}" class="row gy-2 gx-3 align-items-center">
             <input type="hidden" name="idCategoria" th:field="*{idCategoria}"/>
             <div class="mx-auto col-auto shadow-sm p-3 mb-5 bg-body rounded" style="width: 450px;">
-                <label for="descripcion" class="form-label">Digite la Descripción de la Categoría:</label>
+                <label for="descripcion" class="form-label" th:text="#{categoria.descripcion}">Digite la Descripción de la Categoría:</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Descripción de la Categoría" th:field="*{descripcion}">
                 <br>
                 <div class="form-check form-switch">
-                    <label class="form-check-label" for="activo" >Estado de la Categoría</label>
+                    <label class="form-check-label" for="activo" th:text="#{categoria.activo}">Estado de la Categoría</label>
                     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" th:field="*{activo}">
                 </div>
                 <br/>
-                <input class="btn btn-primary" type="submit" name="guardar" value="Guardar"/>
+                <button class="btn btn-primary" type="submit" name="guardar" value="Guardar" th:text="#{accion.guardar}"/>
             </div>
         </form>
         <footer th:replace="layout/plantilla :: footer"/>

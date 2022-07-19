@@ -17,9 +17,9 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
-                            <a class="nav-link" th:href="@{/cliente/listado}">Clientes</a>
-                            <a class="nav-link" th:href="@{/categoria/listado}">Categorías</a>
-                            <a class="nav-link" th:href="@{/articulo/listado}">Artículos</a>
+                            <a class="nav-link" th:href="@{/cliente/listado}" th:text="#{plantilla.clientes}">Clientes</a>
+                            <a class="nav-link" th:href="@{/categoria/listado}" th:text="#{plantilla.categorias}">Categorías</a>
+                            <a class="nav-link" th:href="@{/articulo/listado}" th:text="#{plantilla.articulos}">Artículos</a>
                         </div>
                     </div>
                 </div>
@@ -27,17 +27,14 @@
         </header>
         <footer th:fragment="footer" class="footer">
             <div class="card text-center">
-                <div class="card-header">
-                    Featured
-                </div>
+                <div class="card-header">Featured</div>
                 <div class="card-body">
                     <h5 class="card-title">Special title treatment</h5>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a th:href="@{/(lang=es)}" class="btn btn-primary btn-sm">ES</a>
+                    <a th:href="@{/(lang=en)}" class="btn btn-primary btn-sm">EN</a>
                 </div>
-                <div class="card-footer text-muted">
-                    2 days ago
-                </div>
+                <div class="card-footer text-muted">&COPY [[#{plantilla.derechos}]]</div>
             </div>
         </footer>
     </body>
