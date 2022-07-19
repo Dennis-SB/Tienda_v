@@ -9,27 +9,30 @@
     <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <header th:replace="layout/plantilla :: header"/>
-        <h2>Nuestros Artículos</h2>
-        <div th:if="${articulos != null and !articulos.empty}">
+        <h2>Listado de Categorías</h2>
+        <a th:href="@{/categoria/nuevo}">Nueva Categoría</a>
+        <div th:if="${categorias != null and !categorias.empty}">
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>Descripción</th>
-                        <th>Precio</th>
-                        <th>Comprar</th>
+                        <th>Activa</th>
+                        <th>Eliminar</th>
+                        <th>Modificar</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="articulo : ${articulos}">
-                        <td th:text="${articulo.descripcion}"></td>
-                        <td th:text="${articulo.precio}"></td>
-                        <td><a th:href="@{/carrito/agregar/} + ${articulo.idArticulo}">Agregar</a></td>
+                    <tr th:each="categoria : ${categorias}">
+                        <td th:text="${categoria.descripcion}"></td>
+                        <td><input type="checkbox" name="activa" th:checked="${categoria.activo}" disabled="true"></td>
+                        <td><a th:href="@{/categoria/eliminar/} + ${categoria.idCategoria}">Eliminar</a></td>
+                        <td><a th:href="@{/categoria/modificar/} + ${categoria.idCategoria}">Modificar</a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <div th:if="${articulos == null or articulos.empty}">
-            No tenemos una lista de articulos que mostrar...
+        <div th:if="${categorias == null or categorias.empty}">
+            No tenemos una lista de categorias que mostrar...
         </div>
         <footer th:replace="layout/plantilla :: footer"/>
     </body>

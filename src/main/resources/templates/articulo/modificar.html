@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <header th:replace="layout/plantilla :: header"/>
+        <h2>Datos del Artículo</h2>
+        <a th:href="@{/articulo/listado}">Regresar</a>
+        <form th:action="@{/articulo/guardar}" method="post" th:object="${articulo}" class="row gy-2 gx-3 align-items-center">
+            <input type="hidden" name="idArticulo" th:field="*{idArticulo}"/>
+            <div class="mx-auto col-auto shadow-sm p-3 mb-5 bg-body rounded" style="width: 450px;">
+                <label for="descripcion" class="form-label">Digite la Descripción del Artículo:</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Descripción de la Categoría" th:field="*{descripcion}">
+                <br>
+                <label for="detalle" class="form-label">Digite el Detalle del Artículo:</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Detalle del Artículo" th:field="*{detalle}">
+                <br>
+                <label for="precio" class="form-label">Digite el Precio del Artículo:</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Precio del Artículo" th:field="*{precio}">
+                <br>
+                <label for="descripcion" class="form-label">Digite el Número de Existencias del Artículo:</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Número de Existencias del Artículo" th:field="*{existencias}">
+                <br>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" th:field="*{activo}">
+                    <label class="form-check-label" for="activo" >Estado del Artículo</label>
+                </div>
+                <br/>
+                <input class="btn btn-primary" type="submit" name="guardar" value="Guardar"/>
+            </div>
+        </form>
+        <footer th:replace="layout/plantilla :: footer"/>
+    </body>
+</html>
