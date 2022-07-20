@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head>
         <title>TechShop</title>
         <meta charset="UTF-8">
@@ -15,24 +16,31 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
+                        <div class="navbar-nav" sec:authorize="hasRole('ROLE_VENDEDOR')">
                             <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
                             <a class="nav-link" th:href="@{/cliente/listado}" th:text="#{plantilla.clientes}">Clientes</a>
                             <a class="nav-link" th:href="@{/categoria/listado}" th:text="#{plantilla.categorias}">Categorías</a>
                             <a class="nav-link" th:href="@{/articulo/listado}" th:text="#{plantilla.articulos}">Artículos</a>
+                            <a class="nav-link" th:href="@{/admin/listado}" th:text="#{plantilla.admin}" sec:authorize="hasRole('ROLE_ADMIN')">Admin</a>
                         </div>
                     </div>
                 </div>
+                <form method="POST" th:action="@{/logout}" class="d-flex">
+                    <a href="#" onclick="this.parentNode.submit();" class="btn btn-outline-danger me-2" type="button">[[#{plantilla.logout}]]</a>
+                </form>
             </nav>
         </header>
         <footer th:fragment="footer" class="footer">
-            <div class="card text-center">
+            <div class="card text-center fixed-bottom">
                 <div class="card-header">Featured</div>
                 <div class="card-body">
                     <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a th:href="@{/(lang=es)}" class="btn btn-primary btn-sm">ES</a>
-                    <a th:href="@{/(lang=en)}" class="btn btn-primary btn-sm">EN</a>
+                    <p class="card-text">
+                        [[#{plantilla.tusuario}]]: <span sec:authentication="name">xx</span> |
+                        [[#{plantilla.troles}]]: <span sec:authentication="principal.authorities">a</span>
+                    </p>
+                    <a th:href="@{/(lang=es)}" class="btn btn-outline-primary btn-sm">ES</a>
+                    <a th:href="@{/(lang=en)}" class="btn btn-outline-primary btn-sm">EN</a>
                 </div>
                 <div class="card-footer text-muted">&COPY [[#{plantilla.derechos}]]</div>
             </div>
